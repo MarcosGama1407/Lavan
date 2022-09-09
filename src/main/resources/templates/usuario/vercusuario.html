@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="https://wwww.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>verc</title>
+</head>
+
+<body>
+
+        <section>
+
+        <div class="contenido">
+            <table class="table table-stripped">
+                <thead>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Rol</th>
+                </thead>
+                <tbody>
+                    <tr th:each="factura: ${usuario.facturas}">
+                    <td th:text="${factura.id}"></td>
+                    </tr>
+                </tbody>
+                <div th:if="${#lists.isEmpty(usuario.facturas)}"
+                class="alert alert-info my-4"
+                th:text="'No hay facturas creadas por este usuario' + ${factura.id} + ${factura.nombreCliente}">
+                </div>
+                
+                <table th:if="${not #lists.isEmpty(usuario.facturas)}" class="table table-
+                stripped">
+        </div>
+    </div>
+    </section>
+
+</body>
+
+</html>

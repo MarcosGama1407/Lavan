@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User list</title>
+    <link rel="stylesheet" th:href="@{/CSS/usuario/style.css}">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-wrap">
+                    <table class="table table-responsive-xl">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Estado</th>
+                <th>Fecha</th>
+                <th>Nombre Cliente</th>
+                <th>Valor Total</th>
+                <th colspan="1">
+                    <a th:href="@{/Factura/form}"> <button type="button" class="btn btn-primary">Nuevo</button></a>
+                    <a th:href="@{/home}"> <button type="button" class="btn btn-primary">Regresar</button></a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="alert" role="alert" th:if="${facturas.size()>0}" th:each="fact:${facturas}">
+                <td th:text="${fact.id}"></td>
+                <td class="d-flex align-items-center" th:text="${user.nombreCliente}"></td>
+                <td th:text="${fact.fecha}"></td>
+                <td th:text="${fact.valorTotal}"></td>
+                <td th:if="${fact.estado==true}" class="status">
+                    <span class="active">Activo</span>
+                </td>
+                <td th:if="${fact.estado==false}" class="status">
+                    <span class="dange" style="color: rgb(250, 24, 24); background: rgb(255, 181, 181);">Inactivo</span>
+                </td>
+                <td>
+                    <a th:href="@{/Factura/ver/}+${fact.id}" class='btn btn-warning btn-sm'>Actualizar</a>
+                    <a th:href="@{/Factura/delete/}+${fact.id}" onclick="style='background-color: white';return confirm('Estás seguro que quieres eliminar este usuario?');" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

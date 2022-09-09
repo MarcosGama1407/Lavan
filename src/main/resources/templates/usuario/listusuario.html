@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User list</title>
+    <link rel="stylesheet" th:href="@{/CSS/usuario/style.css}">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-wrap">
+                    <table class="table table-responsive-xl">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Telefono</th>
+                <th>Estado</th>
+                <th colspan="1">
+                    <a th:href="@{/Usuario/form}"> <button type="button" class="btn btn-primary">Nuevo</button></a>
+                    <a th:href="@{/home}"> <button type="button" class="btn btn-primary">Regresar</button></a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="alert" role="alert" th:if="${usuarios.size()>0}" th:each="user:${usuarios}">
+                <td th:text="${user.idUsuario}"></td>
+                <td class="d-flex align-items-center" th:text="${user.nombre}"></td>
+                <td th:text="${user.apellido}"></td>
+                <td th:text="${user.telefono}"></td>
+                <td th:if="${user.estado==true}" class="status">
+                    <span class="active">Activo</span>
+                </td>
+                <td th:if="${user.estado==false}" class="status">
+                    <span class="dange" style="color: rgb(250, 24, 24); background: rgb(255, 181, 181);">Inactivo</span>
+                </td>
+                <td>
+                    <a class="btn btn-info btn-sm" th:href="@{/Usuario/verc/}+${user.idUsuario}"><img src="https://img.icons8.com/office/20/000000/visible--v1.png"/></a>
+                    <a th:href="@{/Usuario/ver/}+${user.idUsuario}" class='btn btn-warning btn-sm'><img src="https://img.icons8.com/arcade/20/000000/experimental-edit-arcade.png"/></a>
+                    <a th:href="@{/Usuario/delete/}+${user.idUsuario}" onclick="style='background-color: white';return confirm('Estás seguro que quieres eliminar este usuario?');" class="btn btn-danger btn-sm"><img src="https://img.icons8.com/3d-plastilina/20/000000/3d-plastilina-light-blue-remove-symbol.png"/></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

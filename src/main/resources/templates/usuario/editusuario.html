@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Add</title>
+    <link rel="stylesheet" th:href="@{/CSS/usuario/add.css}">
+    <link rel="stylesheet" tH:href="@{/CSS/footer/footer.css}">
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <h2 th:text="${accion}"></h2>
+            <a th:href="@{/Usuario/listusuario}"><button type="button " class="btn btn-primary "><img th:src="@{/IMG/usuario/regresar.png}"></button></a>
+            <form class=" row g-3 " th:action="@{/Usuario/addusuario}" th:object="${usuario}" method="post">
+                <div class="inputBx">
+                    <label for="nombre" class="form-label "><img src="https://img.icons8.com/ios-filled/25/ffffff/autograph.png"/></label>
+                    <input type="text" class="form-control" id="nombre" th:field="*{nombre}">
+                
+                    <label for="apellido" class="form-label "><img src="https://img.icons8.com/ios/25/ffffff/rename.png"/></label>
+                    <input type="text" class="form-control" id="apellido" th:field="*{apellido}">
+                </div>
+                <div class="inputBx">
+                    <label for="telefono" class="form-label "><img src="https://img.icons8.com/ios-filled/25/ffffff/add-phone.png"/></label>
+                    <input type="text" class="form-control " id="telefono" th:field="*{telefono}">
+                
+                    <label for="correo" class="form-label"><img src="https://img.icons8.com/ios-filled/25/ffffff/email.png"/></label>
+                    <input type="text" class="form-control " id="correo" th:field="*{correo}">
+                </div>
+                <div class="inputBx">
+                    <label for="rol" class="form-label"><img src="https://img.icons8.com/dotty/25/ffffff/administrator-male.png"/></label>
+                    <input type="text" class="form-control " id="rol" th:field="*{rol}">
+                </div>
+                <div class="">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="estado" th:field="*{estado}">
+                        <label class="form-check-label " for="gridCheck ">
+                            Activar
+                        </label>
+                    </div>
+                </div>
+                <div class="inputBx">
+                    <button type="submit" class="btn btn-success"><img th:src="@{/IMG/usuario/add.png}"></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

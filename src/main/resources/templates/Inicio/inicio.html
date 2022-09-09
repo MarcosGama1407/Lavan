@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+<title>Administración</title>  
+<meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{CSS/inicio/inicio.css}">
+<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+<script src="https://kit.fontawesome.com/570d08161b.js" crossorigin="anonymous"></script>
+<body>
+
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2><span class="fa-regular fa-user"></span>Lavanderia Luz</h2>
+        </div>
+
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="#" class="active"><span class="las la-igloo"></span>
+                    <span>Inicio</span></a>
+                </li>
+                <li>
+                    <a th:href="@{/Usuario/listusuario}"><span class="las la-users"></span>
+                    <span>Usuarios</span></a>
+                </li>
+                <li>
+                    <a th:href="@{/Factura/listfactura}"><span class="las la-clipboard-list"></span>
+                    <span>Factura</span></a>
+                </li>
+                <li>
+                    <a th:href="@{/}"><span class="las la-shopping-bag"></span>
+                    <span>Detalles</span></a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="main-content">
+        <header>
+            <h1>
+                <div class="header-title">
+                    <label for="">
+                        <span class="las la-bars"></span>
+                    </label>
+                </div>
+
+                Administración
+            </h1>
+
+            <div class="search-wrapper">
+                <span class="las la-search"></span>
+                <input type="search" placeholder="Busque aqui"/>
+            </div>
+
+            <div class="user-wrapper">
+                <img th:src="@{/IMG/inicio/logo.png}" width="40px" height="40px" alt="">
+                <div>
+                    <h4>nombre</p></h4>
+                    <small>rol</p></small>
+                </div>
+            </div>
+        </header>
+
+        
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+.container{
+    margin: 10% 0 0 15;
+    width: 900px; 
+    padding: 30px;
+    margin-left: 20%;
+    margin-right: auto;
+}
+
+.form{
+    border: 1px solid blue;
+    border-radius: 21px;
+    background-color: #3586ff;
+    padding: 5%;
+}
+
+.form .inputBx input{
+    background: none;
+    width: 25%;
+    height: 19px;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    margin-left: 2%;
+    margin-top: 5%;
+    color: white;
+}
+
+h2{
+    text-align: center;
+    color: #ffffff;
+    display: inline-block;
+    margin-left: 37%;
+    margin-right: 30%;
+}
+
+.form-check{
+    color: #ffffff;
+}
+
+.btn{
+    border: none;
+    background-color: #3586ff;
+    text-decoration: none;
+    width: 30px;
+    height: 30px;
+}
+
+label{
+    margin-left: 78px;
+    margin-bottom: 5px;
+}
+
+.form-check-input{
+    margin-left: 78px;
+    margin-bottom: 5px;
+    margin-top: 5%;
+}
+
+.btn-success{
+    margin-left: 78px;
+    margin-top: 3%;
+}
